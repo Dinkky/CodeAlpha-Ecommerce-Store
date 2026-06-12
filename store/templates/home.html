@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Store</title>
+
+    <link rel="stylesheet"
+          href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <a href="/">Home</a>
+
+    <a href="/cart/">Cart</a>
+
+    {% if user.is_authenticated %}
+
+        <a href="/logout/">Logout</a>
+
+    {% else %}
+
+        <a href="/login/">Login</a>
+
+        <a href="/register/">Register</a>
+
+    {% endif %}
+
+</div>
+
+<div class="container">
+
+    <h1 class="heading">
+        Simple E-Commerce Store
+    </h1>
+
+    <div class="products">
+
+    {% for product in products %}
+
+        <div class="card">
+
+            <img src="{{ product.image }}">
+
+            <h2>{{ product.name }}</h2>
+
+            <p>{{ product.description }}</p>
+
+            <h3>₹{{ product.price }}</h3>
+
+            <a class="btn"
+               href="/product/{{ product.id }}/">
+
+               View Details
+
+            </a>
+
+        </div>
+
+    {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

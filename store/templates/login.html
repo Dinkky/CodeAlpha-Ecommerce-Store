@@ -1,0 +1,59 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login</title>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card" style="width:400px;margin:auto;margin-top:100px;">
+
+<h1>Login</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<label>Username</label>
+
+<input type="text"
+       name="username"
+       style="width:100%;padding:10px;margin:10px 0;">
+
+<label>Password</label>
+
+<input type="password"
+       name="password"
+       style="width:100%;padding:10px;margin:10px 0;">
+
+<button class="btn"
+        type="submit">
+
+Login
+
+</button>
+
+</form>
+
+<br>
+
+<p>
+Don't have an account?
+<a href="/register/">Register</a>
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
