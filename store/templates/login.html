@@ -1,59 +1,88 @@
-
 {% load static %}
 
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Login</title>
+    <title>Login</title>
 
-<link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
 </head>
 
 <body>
 
+<nav>
+
+    <a href="/">🏠 Home</a>
+
+    <a href="/register/">Register</a>
+
+</nav>
+
 <div class="container">
 
-<div class="card" style="width:400px;margin:auto;margin-top:100px;">
+    <div class="card login-card">
 
-<h1>Login</h1>
+        <h1>🔐 Login</h1>
 
-<form method="POST">
+        <p class="subtitle">
+            Welcome Back! Login to continue shopping.
+        </p>
 
-{% csrf_token %}
+        <form method="POST">
 
-<label>Username</label>
+            {% csrf_token %}
 
-<input type="text"
-       name="username"
-       style="width:100%;padding:10px;margin:10px 0;">
+            <label>Username</label>
 
-<label>Password</label>
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                required
+            >
 
-<input type="password"
-       name="password"
-       style="width:100%;padding:10px;margin:10px 0;">
+            <label>Password</label>
 
-<button class="btn"
-        type="submit">
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                required
+            >
 
-Login
+            <button class="btn" type="submit">
 
-</button>
+                Login
 
-</form>
+            </button>
 
-<br>
+        </form>
 
-<p>
-Don't have an account?
-<a href="/register/">Register</a>
-</p>
+        <p class="bottom-text">
+
+            Don't have an account?
+
+            <a href="/register/">
+
+                Register Here
+
+            </a>
+
+        </p>
+
+    </div>
 
 </div>
 
-</div>
+<footer>
+
+    © 2026 My E-Commerce Store
+
+</footer>
 
 </body>
+
 </html>

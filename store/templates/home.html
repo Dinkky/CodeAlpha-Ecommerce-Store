@@ -2,43 +2,57 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My Store</title>
 
-    <link rel="stylesheet"
-          href="{% static 'style.css' %}">
+<head>
+
+<title>My Store</title>
+
+<link rel="stylesheet"
+      href="{% static 'style.css' %}">
+
 </head>
 
 <body>
 
 <nav>
+
     <a href="/">🏠 Home</a>
+
     <a href="/cart/">🛒 Cart</a>
 
     {% if user.is_authenticated %}
+
         <span class="username">
-            👋 Welcome, {{ user.username }}
+            👋 {{ user.username }}
         </span>
 
         <a href="/logout/">Logout</a>
 
     {% else %}
+
         <a href="/login/">Login</a>
+
         <a href="/register/">Register</a>
 
     {% endif %}
+
 </nav>
 
+<div class="hero">
+
+    <h1>🛒 My E-Commerce Store</h1>
+
+    <p>
+        Best Products At Affordable Prices
+    </p>
+
+</div>
 
 <div class="container">
 
-    <h1 class="heading">
-        Simple E-Commerce Store
-    </h1>
-
     <div class="products">
 
-    {% for product in products %}
+        {% for product in products %}
 
         <div class="card">
 
@@ -53,17 +67,23 @@
             <a class="btn"
                href="/product/{{ product.id }}/">
 
-               View Details
+                View Details
 
             </a>
 
         </div>
 
-    {% endfor %}
+        {% endfor %}
 
     </div>
 
 </div>
+
+<footer>
+
+    © 2026 My E-Commerce Store
+
+</footer>
 
 </body>
 </html>

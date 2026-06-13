@@ -2,45 +2,91 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>{{ product.name }}</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet"
-      href="{% static 'style.css' %}">
+    <title>{{ product.name }}</title>
+
+    <link rel="stylesheet"
+          href="{% static 'style.css' %}">
 
 </head>
 
 <body>
 
+<nav>
+
+    <a href="/">🏠 Home</a>
+
+    <a href="/cart/">🛒 Cart</a>
+
+    {% if user.is_authenticated %}
+
+        <span class="username">
+            👋 {{ user.username }}
+        </span>
+
+        <a href="/logout/">Logout</a>
+
+    {% else %}
+
+        <a href="/login/">Login</a>
+
+        <a href="/register/">Register</a>
+
+    {% endif %}
+
+</nav>
+
 <div class="container">
 
-    <div class="card">
+    <div class="product-detail">
 
-        <img src="{{ product.image }}">
+        <div class="product-image">
 
-        <h1>{{ product.name }}</h1>
+            <img src="{{ product.image }}"
+                 alt="{{ product.name }}">
 
-        <p>{{ product.description }}</p>
+        </div>
 
-        <h2>₹{{ product.price }}</h2>
+        <div class="product-info">
 
-        <a class="btn"
-           href="/add-to-cart/{{ product.id }}/">
+            <h1>{{ product.name }}</h1>
 
-           Add To Cart
+            <p>{{ product.description }}</p>
 
-        </a>
+            <h2>₹{{ product.price }}</h2>
 
-        <br><br>
+            <a class="btn"
+               href="/add-to-cart/{{ product.id }}/">
 
-        <a href="/">
-            Back To Store
-        </a>
+                🛒 Add To Cart
+
+            </a>
+
+            <br><br>
+
+            <a href="/">
+
+                ← Back To Store
+
+            </a>
+
+        </div>
 
     </div>
 
 </div>
 
+<footer>
+
+    © 2026 My E-Commerce Store
+
+</footer>
+
 </body>
+
 </html>

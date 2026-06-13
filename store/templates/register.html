@@ -2,47 +2,73 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Register</title>
+    <title>Register</title>
 
-<link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'style.css' %}">
 
 </head>
 
 <body>
 
+<nav>
+
+    <a href="/">🏠 Home</a>
+
+    <a href="/login/">Login</a>
+
+</nav>
+
 <div class="container">
 
-<div class="card" style="width:450px;margin:auto;margin-top:50px;">
+    <div class="card login-card">
 
-<h1>Create Account</h1>
+        <h1>📝 Create Account</h1>
 
-<form method="POST">
+        <p class="subtitle">
+            Register to start shopping.
+        </p>
 
-{% csrf_token %}
+        <form method="POST">
 
-{{ form.as_p }}
+            {% csrf_token %}
 
-<button class="btn"
-        type="submit">
+            {{ form.as_p }}
 
-Register
+            <button class="btn"
+                    type="submit">
 
-</button>
+                Register
 
-</form>
+            </button>
 
-<br>
+        </form>
 
-<p>
-Already have an account?
-<a href="/login/">Login</a>
-</p>
+        <p class="bottom-text">
+
+            Already have an account?
+
+            <a href="/login/">
+
+                Login Here
+
+            </a>
+
+        </p>
+
+    </div>
 
 </div>
 
-</div>
+<footer>
+
+    © 2026 My E-Commerce Store
+
+</footer>
 
 </body>
+
 </html>

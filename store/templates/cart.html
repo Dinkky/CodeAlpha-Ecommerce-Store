@@ -2,43 +2,110 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Cart</title>
+    <title>Shopping Cart</title>
 
-<link rel="stylesheet"
-      href="{% static 'style.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'style.css' %}">
 
 </head>
 
 <body>
 
+<nav>
+
+    <a href="/">🏠 Home</a>
+
+    <a href="/cart/">🛒 Cart</a>
+
+    {% if user.is_authenticated %}
+
+        <span class="username">
+            👋 {{ user.username }}
+        </span>
+
+        <a href="/logout/">Logout</a>
+
+    {% else %}
+
+        <a href="/login/">Login</a>
+
+        <a href="/register/">Register</a>
+
+    {% endif %}
+
+</nav>
+
 <div class="container">
 
-<h1>Shopping Cart</h1>
+    <h1 class="heading">
 
-{% for product in products %}
+        🛒 Shopping Cart
 
-<div class="card">
+    </h1>
 
-    <h2>{{ product.name }}</h2>
+    {% if products %}
 
-    <h3>₹{{ product.price }}</h3>
+        <div class="products">
+
+            {% for product in products %}
+
+            <div class="card">
+
+                <h2>{{ product.name }}</h2>
+
+                <h3>₹{{ product.price }}</h3>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="total-box">
+
+            <h2>Total Amount</h2>
+
+            <h1>₹{{ total }}</h1>
+
+            <a class="btn"
+               href="/checkout/">
+
+               Proceed To Checkout
+
+            </a>
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-cart">
+
+            <h2>Your Cart Is Empty 😔</h2>
+
+            <p>Add products to continue shopping.</p>
+
+            <a href="/"
+               class="btn">
+
+                Continue Shopping
+
+            </a>
+
+        </div>
+
+    {% endif %}
 
 </div>
 
-{% endfor %}
+<footer>
 
-<h2>Total: ₹{{ total }}</h2>
+    © 2026 My E-Commerce Store
 
-<a class="btn"
-   href="/checkout/">
-
-   Checkout
-
-</a>
-
-</div>
+</footer>
 
 </body>
+
 </html>
