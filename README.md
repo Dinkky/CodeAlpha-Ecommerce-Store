@@ -1,18 +1,22 @@
-
 # 🛒 CodeAlpha E-Commerce Store
 
-A simple E-Commerce website built using Django.
+A simple E-Commerce Store built using Django.
 
 ## Features
 
-- User Registration
-- User Login & Logout
-- Product Listing
-- Product Details Page
-- Shopping Cart
-- Checkout Functionality
-- Django Admin Panel
-- Order Management
+✅ User Registration
+
+✅ User Login & Logout
+
+✅ Product Listing
+
+✅ Product Details Page
+
+✅ Shopping Cart
+
+✅ Order Processing
+
+✅ Admin Panel
 
 ## Technologies Used
 
@@ -22,35 +26,45 @@ A simple E-Commerce website built using Django.
 - CSS
 - SQLite
 
-## Installation
+## Project Screenshots
 
-1. Clone the repository
+### Home Page
 
-```bash
-git clone https://github.com/Dinkky/CodeAlpha-Ecommerce-Store.git
-```
+![Home](screenshots/Home.png)
 
-2. Navigate to project folder
+### Product Details Page
 
-```bash
-cd CodeAlpha-Ecommerce-Store
-```
+![Product Details](screenshots/ProductDetail.png)
 
-3. Run server
+### Cart Page
+
+![Cart](screenshots/Cart.png)
+
+### Login Page
+
+![Login](screenshots/Login.png)
+
+### Register Page
+
+![Register](screenshots/Register.png)
+
+### Checkout Page
+
+![Checkout](screenshots/Checkout.png)
+
+### Admin Products
+
+![Admin Products](screenshots/AdminProducts.png)
+
+### Admin Orders
+
+![Admin Orders](screenshots/AdminOrders.png)
+
+## Run Project
 
 ```bash
 python manage.py runserver
 ```
-
-4. Open browser
-
-```
-http://127.0.0.1:8000/
-```
-
-## Project Screenshots
-
-(Add screenshots here)
 
 ## Author
 
