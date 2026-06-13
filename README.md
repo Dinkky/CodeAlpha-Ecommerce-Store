@@ -35,16 +35,22 @@ A simple E-Commerce Store built using Django.
 ![Product Details](screenshots/ProductDetail.png)
 
 ### Cart Page
-![Cart](screenshots/Cart.png)
+![Cart](screenshots/Cart.png.png)
 
 ### Login Page
-![Login](screenshots/Login.png)
+![Login](screenshots/Login.png.png)
 
 ### Register Page
-![Register](screenshots/Register.png)
+![Register](screenshots/Register.png.png)
 
 ### Checkout Page
-![Checkout](screenshots/Checkout.png)
+![Checkout](screenshots/Checkout.png.png)
+
+### AdminOrders Page
+![AdminOrders](screenshots/AdminOrders.png.png)
+
+### AdminProducts Page
+![AdminProducts](screenshots/AdminProducts.png.png)
 
 ## Run Project
 
