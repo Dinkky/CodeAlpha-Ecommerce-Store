@@ -94,3 +94,8 @@ form{
 .btn:hover{
     background:#0056b3;
 }
+.username{
+    color:white;
+    margin-left:20px;
+    font-weight:bold;
+}

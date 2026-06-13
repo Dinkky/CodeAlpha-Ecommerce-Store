@@ -11,25 +11,24 @@
 
 <body>
 
-<div class="navbar">
-
-    <a href="/">Home</a>
-
-    <a href="/cart/">Cart</a>
+<nav>
+    <a href="/">🏠 Home</a>
+    <a href="/cart/">🛒 Cart</a>
 
     {% if user.is_authenticated %}
+        <span class="username">
+            👋 Welcome, {{ user.username }}
+        </span>
 
         <a href="/logout/">Logout</a>
 
     {% else %}
-
         <a href="/login/">Login</a>
-
         <a href="/register/">Register</a>
 
     {% endif %}
+</nav>
 
-</div>
 
 <div class="container">
 
