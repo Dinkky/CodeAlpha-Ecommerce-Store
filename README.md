@@ -29,7 +29,7 @@ A simple E-Commerce Store built using Django.
 ## Project Screenshots
 
 ### Home Page
-![Home](screenshots/Home.png)
+![Home](screenshots/Home.png.png)
 
 ### Product Details
 ![Product Details](screenshots/ProductDetail.png)
